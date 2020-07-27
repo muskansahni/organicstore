@@ -47,7 +47,7 @@
     background-color: #0d6fb5;
 }
 .heading{
-    margin: 50px;
+   
     text-align: center;
    
 }
@@ -65,3 +65,27 @@
   width:30%;
   margin: 0 auto;
 }
+.fa-shopping-cart{
+  color: yellow;
+}
+.heading{
+  font-weight: 100;
+font-size: 3rem;
+}
+
+
+#search {
+  position: relative; 
+ font-family: 'FontAwesome'  ;/* This is for the placeholder */
+ font-weight: 900;
+ font-size: normal;
+ content: "\f007";
+ left: -5px;
+ margin-top: 10px;
+ margin-left:150px ;
+ border-radius: 25px;
+ width: 80%;
+}
+
+
+

@@ -1,0 +1,66 @@
+hr{
+    width:30%;
+}
+body{
+background-color: black;
+}
+
+#header{
+    text-align: center;
+    padding-top: 35vh;
+    color: white;
+    position: relative;
+
+}
+#header h1{
+    font-weight: 100;
+   
+}
+#slideshow{
+ 
+    z-index: 0;
+    list-style-type: none;
+
+}
+#slideshow li{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 1;
+    top:0;
+    left: 0;
+    animation: imageAnimation 15s  infinite linear ;
+}  
+#slideshow li:nth-child(1){
+    background-image: url(https://images.unsplash.com/photo-1474440692490-2e83ae13ba29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+
+}
+#slideshow li:nth-child(2){
+    background-image: url(https://images.unsplash.com/photo-1528740877956-0223451676bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+    animation-delay: 5s;
+}
+#slideshow li:nth-child(3){
+    background-image: url(https://images.unsplash.com/photo-1528505086635-4c69d5f10908?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+    animation-delay: 10s;
+}
+
+@keyframes imageAnimation{
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10%{
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    20%{
+        opacity: 1;
+    }
+    30%{
+        opacity:0 ;
+    }
+}

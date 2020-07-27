@@ -1,15 +1,62 @@
 
-<%- include('partials/header'); %>
-<% if(product.length>0){
-    var i;
-  
- for(i=0;i<=product.length;i++){%>
-    <p><%=this.item.title%></p>
- <%}
-}%>
-        
+<%- include('partials/header'); -%>
+<link rel="stylesheet" type="text/css" href="/stylesheets/cart.css">
+<% if (product!=null && product.length > 0) { %>
+  <div class="row ">
+     <div class="container">
+   <table id="carttable" >
+      <tr>
+         <th style="padding: 10px;margin: 0;">#</th>
+         <th style="text-align: center;" >Product</th>
+         <th  style="padding-right: 15px;" >Description</th>
+         <th style="padding:30px;">Quantity</th>
+         <th style="padding:30px;text-align: center;">Price</th>
+         <th></th>
+      </tr>
+
    
+   <% for(var i=0; i<product.length; i++) { %>
+      <tr>
+         <td><%=[i+1]%></td>
+         <td style="text-align: center;padding:5px 0 5px 0;"  ><img src="<%= product[i].item.image %>"></td>
+         <td style="text-align: center;"><%= product[i].item.title %></td>
+         <td style="text-align: center;"><%= product[i].qnty %></td>
+         <td style="text-align: center;"><%= product[i].price %></td>
+         <td><a class="btn" href="/reduce/<%=product[i].item._id%>">
+            <i class="fa fa-minus"></i> 
+         </a></i></td>
+         <td><a class="btn" href="/cart/<%=product[i].item._id%>">
+            <i class="fa fa-plus"></i> 
+         </a></i></td>
+         <td><a class="btn" href="/remove/<%=product[i].item._id%>">
+            <i class="fa fa-trash"></i> 
+         </a></i></td>
+   
+   
+      </tr>
+      
+     
+   <% } %>
+</table>
+<div class=" buttons">
+<div class="btn-group " style=" text-align: left;margin:40px  0 0 100px;">
 
-    <%- include('partials/footer'); %>
+   <a class="btn btn-success" href="/order">Buy</a>
+</div>
+<div style=" text-align: right;margin-right:150px;">
+   <p>Total Quantity:<strong><%= quantity%></strong></p>
+   <p>Total Price:<strong>$<%= total%></strong></p>
+</div>
+</div>
 
+</div>
+</div>
+<% } 
+else{ %>
+<h2 style="font-weight: 100;font-size: 2rem;text-align: center;">Your cart is empty , please add items to your cart.</h2>
+<hr style="width: 40%;">
+<%}%>
+
+
+<%- include('partials/footer'); -%>
  

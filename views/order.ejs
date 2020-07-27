@@ -1,0 +1,23 @@
+<%- include('partials/header'); %>
+
+    <div class="row">
+        <div class="container">
+            <h2 class="text-center">order</h2>
+            <form action="/order"method="POST">
+           
+                <div class="form-group">
+                    <input type="text" placeholder="name" name="name" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="address" name="address" class="form-control">
+          </div>
+        <button class="btn btn-block btn-primary">submit</button>
+        
+            </form>
+    
+        </div>
+    
+    </div>
+
+
+<%- include('partials/footer'); %>
